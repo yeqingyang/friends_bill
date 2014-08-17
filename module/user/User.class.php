@@ -11,7 +11,7 @@ class User{
 	public static function addUser($user){
 		$data=new Data();
 		$query="insert into $this->tbl_name values";
-		$query .= "(".$user['uid'].",".$user['name'].");";
+		$query .= "(".$user['name'].");";
 		$ret = $data->query($query);
 		return 'ok';
 	}

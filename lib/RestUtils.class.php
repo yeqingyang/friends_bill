@@ -10,7 +10,7 @@ class RestUtils {
 		switch ($data->getMethod) {
 			// this is a request for all users, not one in particular
 			case 'get' :
-				$user_list = getUserList (); // assume this returns an array
+				$user_list = User::getUsers(); // assume this returns an array
 				
 				if ($data->getHttpAccept == 'json') {
 					RestUtils::sendResponse ( 200, json_encode ( $user_list ), 'application/json' );
