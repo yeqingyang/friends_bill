@@ -12,7 +12,7 @@ class User{
 		$data=new Data();
 		$cols = implode(',',array_keys($user));
 		$values = implode(',',$user);
-		$query="insert into ".self::tbl_name."(".$cols.") "." values"."(".$values.");";
+		$query="insert into ".self::tbl_name."(".$cols.") "." values"."(\"".$values."\");";
 		echo $query;
 		$ret = $data->query($query);
 		return $ret;

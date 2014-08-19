@@ -36,6 +36,16 @@ class Data{
 		$this->mysqli->close();
 		return $return;
 	}
+	public function queryArrayToStirng($type, $query){
+
+		$cols = implode(',',array_keys($user));
+		$values = implode(',',$user);
+		$query="";
+		switch($type){
+			case "insert";
+		}
+	}
+
 	function __destruct() {
 	}
 }
