@@ -1,15 +1,15 @@
 CREATE TABLE IF NOT EXISTS `t_user`
 (
-	`uid`	int(10) unsigned not null comment 'Íæ¼Òuid',
-	`usetime` int(10) unsigned not null comment 'ÉÏ´ÎµÇÂ¼Ê±¼ä',
-	`uname`	varchar(16) not null comment 'ÓÃ»§uname',
-	`status` int unsigned not null default 1 comment 'ÓÃ»§×´Ì¬£¬0£ºdeleted£¬1£ºonline, 2£ºoffline, 3:suspend ',
-	`create_time` int unsigned not null comment 'ÓÃ»§´´½¨Ê±¼ä',
-	`dtime` int unsigned default 0 comment 'ÓÃ»§É¾³ýÊ±¼ä',
-	`birthday` int unsigned not null default 0 comment 'ÓÃ»§ÉúÈÕ',
-	`gold_num` int unsigned not null default 0 comment '½ð±ÒRMB',
-	`reward_point` int unsigned not null default 0 comment '»ý·Ö',
-	`last_login_time` int unsigned not null default 0 comment 'ÉÏ´ÎµÇÂ¼µÄÊ±¼ä',
-    `online_accum_time` int unsigned not null default 0 comment 'ÔÚÏßÀÛ¼ÆÊ±¼ä',
+	`uid`	int(10) unsigned not null auto_increment comment 'ï¿½ï¿½ï¿½uid',
+	`usetime` int(10) unsigned not null default 0 comment 'ï¿½Ï´Îµï¿½Â¼Ê±ï¿½ï¿½',
+	`uname`	varchar(16) not null comment 'ï¿½Ã»ï¿½uname',
+	`status` int unsigned not null default 1 comment 'ï¿½Ã»ï¿½×´Ì¬ï¿½ï¿½0ï¿½ï¿½deletedï¿½ï¿½1ï¿½ï¿½online, 2ï¿½ï¿½offline, 3:suspend ',
+	`create_time` int unsigned not null default 0 comment 'ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+	`dtime` int unsigned default 0 comment 'ï¿½Ã»ï¿½É¾ï¿½ï¿½Ê±ï¿½ï¿½',
+	`birthday` int unsigned not null default 0 comment 'ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½',
+	`gold_num` int unsigned not null default 0 comment 'ï¿½ï¿½ï¿½RMB',
+	`reward_point` int unsigned not null default 0 comment 'ï¿½ï¿½ï¿½',
+	`last_login_time` int unsigned not null default 0 comment 'ï¿½Ï´Îµï¿½Â¼ï¿½ï¿½Ê±ï¿½ï¿½',
+    `online_accum_time` int unsigned not null default 0 comment 'ï¿½ï¿½ï¿½ï¿½ï¿½Û¼ï¿½Ê±ï¿½ï¿½',
 	primary key(`uid`)
-)default charset utf8 engine = InnoDb;
+) auto_increment=1000 default charset utf8 engine = InnoDb;
