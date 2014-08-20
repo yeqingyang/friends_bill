@@ -4,6 +4,7 @@ class RestUtils {
 		// get our verb ��ȡ����
 		$request_method = strtolower ( $_SERVER ['REQUEST_METHOD'] );
 		$return_obj = new RestRequest ();
+		$return_obj->setMethod($request_method);
 		// we'll store our data here ������洢�������
 		$data = array ();
 		
