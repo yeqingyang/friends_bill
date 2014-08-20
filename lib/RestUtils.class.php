@@ -14,10 +14,10 @@ class RestUtils {
 				Logger::info("http get request");
 				$user_list = User::getUsers(); // assume this returns an array
 				var_dump($user_list);
-				if ($return_obj->getHttpAccept == 'json') {
+				if ($return_obj->getHttpAccept() == 'json') {
 					Logger::info("getHttpAccept is json");
 					RestUtils::sendResponse ( 200, json_encode ( $user_list ), 'application/json' );
-				} else if ($return_obj->getHttpAccept == 'xml') {
+				} else if ($return_obj->getHttpAccept() == 'xml') {
 					// using the XML_SERIALIZER Pear Package
 					Logger::info("getHttpAccept is xml");
 					$options = array (
