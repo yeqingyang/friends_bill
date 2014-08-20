@@ -2,13 +2,14 @@
 class RestUtils {
 	public static function processRequest() {
 		// get our verb ��ȡ����
+		Logger::info("start process request");
 		$request_method = strtolower ( $_SERVER ['REQUEST_METHOD'] );
 		$return_obj = new RestRequest ();
 		$return_obj->setMethod($request_method);
 		// we'll store our data here ������洢�������
 		$data = array ();
 		
-		switch ($return_obj->getMethod) {
+		switch ($return_obj->getMethod()) {
 			// this is a request for all users, not one in particular
 			case 'get' :
 				Logger::info("http get request");
