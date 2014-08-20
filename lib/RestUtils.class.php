@@ -32,7 +32,7 @@ class RestUtils {
 					Logger::info("start sendResponse");
 					RestUtils::sendResponse ( 200, $serializer->serialize ( $user_list ), 'application/xml' );
 				}
-				
+				Logger::info("getHttpAccept  %s", $return_obj->getHttpAccept());
 				break;
 			// new user create
 			case 'post' :
