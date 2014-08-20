@@ -30,4 +30,5 @@ require_once './lib/MyAutoLoad.class.php';
 $filename="log/fb.log";
 Logger::init($filename, 1);
 // 亲^_^ 后面不需要任何代码了 就是如此简单
+Logger::info('start');
 RestUtils::processRequest();

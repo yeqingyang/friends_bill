@@ -10,21 +10,24 @@ class RestUtils {
 		switch ($return_obj->getMethod) {
 			// this is a request for all users, not one in particular
 			case 'get' :
-				echo "********************";
+				Logger::info("http get request");
 				$user_list = User::getUsers(); // assume this returns an array
 				var_dump($user_list);
 				if ($return_obj->getHttpAccept == 'json') {
+					Logger::info("getHttpAccept is json");
 					RestUtils::sendResponse ( 200, json_encode ( $user_list ), 'application/json' );
 				} else if ($return_obj->getHttpAccept == 'xml') {
 					// using the XML_SERIALIZER Pear Package
+					Logger::info("getHttpAccept is xml");
 					$options = array (
 							'indent' => '     ',
 							'addDecl' => false,
 							'rootName' => 'userlist',
 							XML_SERIALIZER_OPTION_RETURN_RESULT => true 
 					);
+					Logger::info("start XML_Serializer");
 					$serializer = new XML_Serializer ( $options );
-					
+					Logger::info("start sendResponse");
 					RestUtils::sendResponse ( 200, $serializer->serialize ( $user_list ), 'application/xml' );
 				}
 				
