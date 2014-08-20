@@ -1,6 +1,6 @@
 #/bin/bash
 
-PHP=/home/lpz/tools/php/bin/php
+PHP=/home/pirate/programs/php/bin/php
 DIR=`dirname $0`
 cd $DIR
 DIR=`pwd`
