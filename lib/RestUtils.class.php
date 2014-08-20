@@ -10,8 +10,9 @@ class RestUtils {
 		switch ($return_obj->getMethod) {
 			// this is a request for all users, not one in particular
 			case 'get' :
+				echo "********************";
 				$user_list = User::getUsers(); // assume this returns an array
-				
+				var_dump($user_list);
 				if ($return_obj->getHttpAccept == 'json') {
 					RestUtils::sendResponse ( 200, json_encode ( $user_list ), 'application/json' );
 				} else if ($return_obj->getHttpAccept == 'xml') {
