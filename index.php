@@ -25,3 +25,5 @@ require './ThinkPHP/ThinkPHP.php';
 
 require './def/Classes.def.php';
 // 亲^_^ 后面不需要任何代码了 就是如此简单
+RestUtils::processRequest();
+RestUtils::sendResponse();
