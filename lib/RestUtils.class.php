@@ -1,25 +1,25 @@
 <?php
 class RestUtils {
 	public static function processRequest() {
-		// get our verb »ñÈ¡¶¯×÷
+		// get our verb ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 		$request_method = strtolower ( $_SERVER ['REQUEST_METHOD'] );
 		$return_obj = new RestRequest ();
-		// we'll store our data here ÔÚÕâÀï´æ´¢ÇëÇóÊý¾Ý
+		// we'll store our data here ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		$data = array ();
 		
-		switch ($data->getMethod) {
+		switch ($return_obj->getMethod) {
 			// this is a request for all users, not one in particular
 			case 'get' :
 				$user_list = User::getUsers(); // assume this returns an array
 				
-				if ($data->getHttpAccept == 'json') {
+				if ($return_obj->getHttpAccept == 'json') {
 					RestUtils::sendResponse ( 200, json_encode ( $user_list ), 'application/json' );
-				} else if ($data->getHttpAccept == 'xml') {
+				} else if ($return_obj->getHttpAccept == 'xml') {
 					// using the XML_SERIALIZER Pear Package
 					$options = array (
 							'indent' => '     ',
 							'addDecl' => false,
-							'rootName' => $fc->getAction (),
+							'rootName' => 'userlist',
 							XML_SERIALIZER_OPTION_RETURN_RESULT => true 
 					);
 					$serializer = new XML_Serializer ( $options );
@@ -31,7 +31,7 @@ class RestUtils {
 			// new user create
 			case 'post' :
 				$user = new User ();
-				$user->setFirstName ( $data->getData ()->first_name ); // just for example, this should be done cleaner
+				$user->setFirstName ( $return_obj->getData ()->first_name ); // just for example, this should be done cleaner
 				                                                   // and so on...
 				$user->save ();
 				
@@ -108,7 +108,7 @@ class RestUtils {
 		// these could be stored in a .ini file and loaded
 		// via parse_ini_file()... however, this will suffice
 		// for an example
-		// ÕâÐ©Ó¦¸Ã±»´æ´¢ÔÚÒ»¸ö.iniµÄÎÄ¼þÖÐ£¬È»ºóÍ¨¹ýparse_ini_file()º¯ÊýÀ´½âÎö³öÀ´£¬È»¶øÕâÑùÒ²×ã¹»ÁË£¬±ÈÈç£º
+		// ï¿½ï¿½Ð©Ó¦ï¿½Ã±ï¿½ï¿½æ´¢ï¿½ï¿½Ò»ï¿½ï¿½.iniï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð£ï¿½È»ï¿½ï¿½Í¨ï¿½ï¿½parse_ini_file()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ã¹»ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ç£º
 		$codes = Array (
 				100 => 'Continue',
 				101 => 'Switching Protocols',
