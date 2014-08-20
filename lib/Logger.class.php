@@ -42,7 +42,7 @@ class Logger
 
 	private static $FORCE_FLUSH = false;
 	
-	private static $OS_CL = '\n';
+	private static $OS_CL = "\n";
 
 	public static function flush()
 	{
