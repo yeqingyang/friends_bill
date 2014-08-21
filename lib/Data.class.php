@@ -133,6 +133,7 @@ class Data {
 		$this->reset ();
 	}
 	public function query($query) {
+		Logger::info('Data start query');
 		if (empty ( $this->mysqli )) {
 			$this->init ();
 		}
