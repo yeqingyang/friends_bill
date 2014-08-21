@@ -10,4 +10,12 @@ class UserDao{
 		$ret = $data->query();
 		return $ret;
 	}
+	
+	public static function insert($values){
+		$data=new Data();
+		$data->insertIgnore(self::$tbl_name);
+		$data->values($values);
+		$ret = $data->query();
+		return 'ok';
+	}
 }

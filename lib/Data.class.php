@@ -1,4 +1,37 @@
 <?php
+
+class BaseOperator
+{
+
+	protected $value;
+
+	public function getValue()
+	{
+
+		return intval ( $this->value );
+	}
+}
+
+class IncOperator extends BaseOperator
+{
+
+	public function __construct($value)
+	{
+
+		$this->value = intval ( $value );
+	}
+}
+
+class DecOperator extends BaseOperator
+{
+
+	public function __construct($value)
+	{
+
+		$this->value = intval ( $value );
+	}
+}
+
 class Data {
 	private $mysqli;
 	/**
@@ -155,7 +188,7 @@ class Data {
 						$arrReturn [] = $arrTmpRow;
 					} else {
 						Logger::debug('%d < %d',count ( $row ),count ( $this->arrSelect ));
-						$arrReturn [] = $return;
+						$arrReturn [] = $row;
 					}
 				}
 			}
@@ -202,16 +235,99 @@ class Data {
 							throw new Exception ( "inter" );
 					}
 				}
-				$finalCommand .= ';';
+				break;
+			case 'insertInto':
+			case 'insertIgnore':
+				$finalCommand .= $this->command;
+				$finalCommand .= ' '.$this->table;
+				foreach ($this->arrInsert as $key=>$value){
+					$keyString .= $key.',';
+					if(stristr($key,'name') != false){
+						$valueString .= '\"'.$value.'\",';
+					}
+				}
+				$keyString = substr($keyString, 0, -1);
+				$valueString = substr($valueString, 0, -1);
+				$finalCommand .= '('.$keyString.') values ('.$valueString.')';
+				break;
+				
 		}
+		$finalCommand .= ';';
 		Logger::info ( 'final command: %s', $finalCommand );
 		return $finalCommand;
 	}
+	
 	public function select($selectFields) {
 		$this->command = 'select';
 		$this->arrSelect = $selectFields;
 		return $this;
 	}
+	
+	/**
+	 * insert into子句
+	 *
+	 * @param string $table
+	 *
+	 * @return CData
+	 *
+	 * @author
+	 */
+	public function insertInto($table)
+	{
+	
+		$this->setTable ( $table );
+		$this->command = 'insertInto';
+		return $this;
+	}
+	
+	/**
+	 * insert ignore子句
+	 *
+	 * @param string $table
+	 *
+	 * @return CData
+	 *
+	 * @author
+	 */
+	public function insertIgnore($table)
+	{
+	
+		$this->setTable ( $table );
+		$this->command = 'insertIgnore';
+		return $this;
+	}
+	
+	/**
+	 * value子句
+	 *
+	 * @param array $arrInsert array("uid"=>1, "name"=>"name")
+	 *
+	 * @return CData
+	 *
+	 * @throws 如果command!=insert***,或者参数为空,则会throw Exception
+	 *
+	 * @author
+	 */
+	public function values($arrInsert)
+	{
+	
+		if (substr ( $this->command, 0, 6 ) != 'insert')
+		{
+			$this->reset ();
+			Logger::fatal ( "call insertXXX first" );
+			throw new Exception ( "inter" );
+		}
+	
+		if (empty ( $arrInsert ))
+		{
+			$this->reset ();
+			Logger::fatal ( "empty values not allowed" );
+			throw new Exception ( "inter" );
+		}
+		$this->arrInsert = $this->escapeBody ( $arrInsert );
+		return $this;
+	}
+	
 	public function from($table) {
 		$this->table = $table;
 		return $this;
@@ -325,6 +441,40 @@ class Data {
 	}
 	public function limit($limit){
 		$this->limit=$limit;
+	}
+	
+	/**
+	 * 转义数组,如果数据不是number或者string,则throw Exception
+	 *
+	 * @param array(mixed) $arrBody
+	 *
+	 * @return array(mixed)
+	 *
+	 * @throws Exception
+	 *
+	 * @author
+	 */
+	private function escapeBody($arrBody)
+	{
+	
+		foreach ( $arrBody as $col => $value )
+		{
+			if ($value instanceof IncOperator)
+			{
+				$arrBody [$col] = array ("+=", $value->getValue () );
+				$this->noCache = true;
+			}
+			else if ($value instanceof DecOperator)
+			{
+				$arrBody [$col] = array ("-=", $value->getValue () );
+				$this->noCache = true;
+			}
+			else
+			{
+				$arrBody [$col] = array ('=', $value );
+			}
+		}
+		return $arrBody;
 	}
 	/**
 	 * 重置条件

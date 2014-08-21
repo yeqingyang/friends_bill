@@ -8,11 +8,11 @@ class RestUtils {
 		$return_obj->setMethod($request_method);
 		// we'll store our data here ������洢�������
 		$data = array ();
-		
+		Logger::info("http request: %s ",$return_obj->getMethod());
 		switch ($return_obj->getMethod()) {
 			// this is a request for all users, not one in particular
+			
 			case 'get' :
-				Logger::info("http get request");
 				$user_list = EnUser::getUsers(); // assume this returns an array
 				if ($return_obj->getHttpAccept() == 'json') {
 					Logger::info("getHttpAccept is json");
@@ -35,13 +35,15 @@ class RestUtils {
 				break;
 			// new user create
 			case 'post' :
-				$user = new User ();
-				$user->setFirstName ( $return_obj->getData ()->first_name ); // just for example, this should be done cleaner
-				                                                   // and so on...
-				$user->save ();
+				if(isset($_POST['username'])){
+					$user = new OneUser($_POST['username']);
+				}else{
+					break;
+				}
+				$ret = EnUser::addUser($user);
 				
 				// just send the new ID as the body
-				RestUtils::sendResponse ( 201, $user->getId () );
+				RestUtils::sendResponse ( 201, $ret );
 				break;
 		}
 		

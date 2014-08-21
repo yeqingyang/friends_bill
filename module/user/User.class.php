@@ -9,12 +9,11 @@ class User{
 	}
 	
 	public static function addUser($user){
-		$data=new Data();
-		$cols = implode(',',array_keys($user));
-		$values = implode(',',$user);
-		$query="insert into ".self::tbl_name."(".$cols.") "." values"."(\"".$values."\");";
-		echo $query;
-		$ret = $data->query($query);
+		Logger::info("start addUser");
+		$user->setCreateTime();
+		$values = $user->getAllInfo();
+		$ret = UserDao::insert($values);
+		Logger::info("end adduser");
 		return $ret;
 	}
 

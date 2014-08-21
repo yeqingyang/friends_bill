@@ -24,5 +24,9 @@ class EnUser{
 		$ret = User::getUsers($selectFields, $wheres);
 		return $ret;
 	}
+	public static function adduser($oneUser){
+		$ret = User::addUser($oneUser);
+		return $ret;
+	}
 }
 /* vim: set ts=4 sw=4 sts=4 tw=100 noet: */
