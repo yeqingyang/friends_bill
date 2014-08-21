@@ -1,7 +1,7 @@
 <?php
 class User{
 	const tbl_name="t_user";
-	public static function getUsers(){
+	public static function getUsers($selectFields){
 		Logger::info("start getUsers");
 		$data=new Data();
 		$query="select * from ".self::tbl_name.";";
