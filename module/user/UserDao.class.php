@@ -1,10 +1,13 @@
 <?php
 class UserDao{
 	private $tbl_name='t_user';
-	public static function getInfo($selectfield,$wheres){
+	public static function getInfo($selectFields, $wheres, $limit=100){
 		$data=new Data();
-		$selectfieldstring = implode(',', $selectfield);
-		$query="select $selectfieldstring from ".self::tbl_name.";";
-		$ret = $data->query($query);
+		$data->select($selectFields);
+		$data->from($this->tbl_name);
+		$data->where($wheres);
+		$data->limit($limit);
+		$ret = $data->query();
+		return $ret;
 	}
 }

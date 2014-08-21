@@ -13,7 +13,7 @@ class RestUtils {
 			// this is a request for all users, not one in particular
 			case 'get' :
 				Logger::info("http get request");
-				$user_list = User::getUsers(); // assume this returns an array
+				$user_list = EnUser::getUsers(); // assume this returns an array
 				if ($return_obj->getHttpAccept() == 'json') {
 					Logger::info("getHttpAccept is json");
 					RestUtils::sendResponse ( 200, json_encode ( $user_list ), 'application/json' );

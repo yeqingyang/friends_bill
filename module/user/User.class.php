@@ -1,11 +1,9 @@
 <?php
 class User{
 	const tbl_name="t_user";
-	public static function getUsers($selectFields){
+	public static function getUsers($selectFields,$wheres){
 		Logger::info("start getUsers");
-		$data=new Data();
-		$query="select * from ".self::tbl_name.";";
-		$ret = $data->query($query);
+		$ret = UserDao::getInfo($selectFields, $wheres);
 		Logger::info("getUsers query end");
 		return $ret;
 	}
