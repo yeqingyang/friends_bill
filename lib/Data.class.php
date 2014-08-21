@@ -130,15 +130,16 @@ class Data {
 		if (mysqli_connect_error ()) {
 			Logger::fatal ( 'Connect Error %d %s', mysqli_connect_errno (), mysqli_connect_error () );
 		}
-		$this->reset ();
 	}
-	public function query($query) {
+	public function query() {
 		Logger::info('Data start query');
 		if (empty ( $this->mysqli )) {
 			$this->init ();
 		}
+		$command = self::queryArrayToStirng();
+		Logger::info('final command:%s',$command);
 		try{
-		$result = $this->mysqli->query ( $query );
+			$result = $this->mysqli->query ( $command );
 		}catch (Exception $e){
 			Logger::fatal('mysql query error! %s', $e->getMessage());
 		}
@@ -173,7 +174,7 @@ class Data {
 				$finalCommand .= 'select ';
 				$finalCommand .= implode ( ',', $this->arrSelect );
 				$finalCommand .= ' from ' . $this->table;
-				$finalCommand .= ' where';
+				$finalCommand .= ' where ';
 				foreach ( $this->arrWhere as $key => $value ) {
 					switch ($value [0]) {
 						case '>' :
@@ -322,6 +323,9 @@ class Data {
 				$value 
 		);
 		return $this;
+	}
+	public function limit($limit){
+		$this->limit=$limit;
 	}
 	/**
 	 * 重置条件

@@ -3,7 +3,9 @@ class ClassDef
 {
 public static $ARR_CLASS = array (
   'oneuser' => 'module/user/OneUser.class.php',
+  'enuser' => 'module/user/EnUser.class.php',
   'user' => 'module/user/User.class.php',
+  'userdao' => 'module/user/UserDao.class.php',
   'data' => 'lib/Data.class.php',
   'restutils' => 'lib/RestUtils.class.php',
   'restrequest' => 'lib/RestUtils.class.php',
