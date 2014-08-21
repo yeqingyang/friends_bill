@@ -143,21 +143,20 @@ class Data {
 		}catch (Exception $e){
 			Logger::fatal('mysql query error! %s', $e->getMessage());
 		}
-		$return = array ();
 		if ($result) {
 			if ($result->num_rows > 0) { 
 				while ( $row = $result->fetch_array () ) { 
 					Logger::info ( "data $row %s", $row );
-					$return [] = $row;
-				}
-				if (count ( $return ) > count ( $this->arrSelect )) {
-					$arrTmpRow = array ();
-					foreach ( $this->arrSelect as $col ) {
-						$arrTmpRow [$col] = $return [$col];
+					if (count ( $row ) >= count ( $this->arrSelect )) {
+						$arrTmpRow = array ();
+						foreach ( $this->arrSelect as $col ) {
+							$arrTmpRow [$col] = $row [$col];
+						}
+						$arrReturn [] = $arrTmpRow;
+					} else {
+						Logger::debug('%d < %d',count ( $row ),count ( $this->arrSelect ));
+						$arrReturn [] = $return;
 					}
-					$arrReturn [] = $arrTmpRow;
-				} else {
-					$arrReturn [] = $return;
 				}
 			}
 		}
