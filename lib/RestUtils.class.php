@@ -14,7 +14,6 @@ class RestUtils {
 			case 'get' :
 				Logger::info("http get request");
 				$user_list = User::getUsers(); // assume this returns an array
-				var_dump($user_list);
 				if ($return_obj->getHttpAccept() == 'json') {
 					Logger::info("getHttpAccept is json");
 					RestUtils::sendResponse ( 200, json_encode ( $user_list ), 'application/json' );
@@ -70,6 +69,7 @@ class RestUtils {
 		if ($body != '') {
 			// send the body
 			echo $body;
+			Logger::info("%s",$body);
 			exit ();
 		} 		// we need to create the body if none is passed
 		else {

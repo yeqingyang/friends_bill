@@ -2,9 +2,11 @@
 class User{
 	const tbl_name="t_user";
 	public static function getUsers(){
+		Logger::info("start getUsers");
 		$data=new Data();
 		$query="select * from ".self::tbl_name.";";
 		$ret = $data->query($query);
+		Logger::info("getUsers query end");
 		return $ret;
 	}
 	
