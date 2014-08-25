@@ -1,0 +1,12 @@
+<?php
+
+// 应用入口文件
+
+
+require './def/Classes.def.php';
+require_once './lib/MyAutoLoad.class.php';
+require_once 'XML/Serializer.php';
+
+Logger::init("log/fb.log", 1);
+Logger::info('start');
+RestUtils::processRequest();
