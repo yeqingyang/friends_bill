@@ -3,6 +3,7 @@
 ##
 
 框架初步打算是用phalcon
+（phalcon传送门 http://www.phalconphp.com）
 目录结构比较乱，刚开始是自己瞎写的东西，后来把phalcon实例的东西都放进来了
 build def lib module是我之前写的，app public是phalcon实例的目录
 
