@@ -7,7 +7,8 @@ try {
     $loader->registerDirs(
         array(
             '../app/controllers/',
-            '../app/models/'
+            '../app/models/',
+        	'../lib/'
         )
     )->register();
 
