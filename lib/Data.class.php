@@ -152,14 +152,14 @@ class Data {
 	 */
 	public static $QUERY_CACHE = null;
 	public function Data() {
-		$this->mysqli = new mysqli ( MysqlDef::MYSQL_DB_IP, MysqlDef::MYSQL_DB_USER, "", MysqlDef::MYSQL_DB_NAME );
+		$this->mysqli = new mysqli ( MysqlDef::MYSQL_DB_IP, MysqlDef::MYSQL_DB_USER,  MysqlDef::MYSQL_DB_PASSWORD, MysqlDef::MYSQL_DB_NAME );
 		if (mysqli_connect_error ()) {
 			Logger::fatal ( 'Connect Error %d %s', mysqli_connect_errno (), mysqli_connect_error () );
 		}
 		$this->reset ();
 	}
 	public function init() {
-		$this->mysqli = new mysqli ( MysqlDef::MYSQL_DB_IP, MysqlDef::MYSQL_DB_USER, "", MysqlDef::MYSQL_DB_NAME );
+		$this->mysqli = new mysqli ( MysqlDef::MYSQL_DB_IP, MysqlDef::MYSQL_DB_USER, MysqlDef::MYSQL_DB_PASSWORD, MysqlDef::MYSQL_DB_NAME );
 		if (mysqli_connect_error ()) {
 			Logger::fatal ( 'Connect Error %d %s', mysqli_connect_errno (), mysqli_connect_error () );
 		}
