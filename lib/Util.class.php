@@ -148,7 +148,7 @@ class Util
 	static function getTime()
 	{
 
-		return RPCContext::getInstance ()->getFramework ()->getRequestTime ();
+		return time();
 	}
 
 	/**

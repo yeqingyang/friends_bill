@@ -176,10 +176,9 @@ class Data {
 		}catch (Exception $e){
 			Logger::fatal('mysql query error! %s', $e->getMessage());
 		}
-		if ($result) {
+		if ($result!==TRUE && $result!==FALSE) {
 			if ($result->num_rows > 0) { 
 				while ( $row = $result->fetch_array () ) { 
-					Logger::info ( "data $row %s", $row );
 					if (count ( $row ) >= count ( $this->arrSelect )) {
 						$arrTmpRow = array ();
 						foreach ( $this->arrSelect as $col ) {
@@ -193,7 +192,7 @@ class Data {
 				}
 			}
 		}
-		if (! empty ( $result )) {
+		if ($result!==TRUE && $result!==FALSE) {
 			$result->free ();
 		}
 		$this->mysqli->close ();
@@ -238,12 +237,18 @@ class Data {
 				break;
 			case 'insertInto':
 			case 'insertIgnore':
-				$finalCommand .= $this->command;
+				Logger::debug('arrinsert %s', $this->arrInsert);
+				$finalCommand .= 'insert into';
 				$finalCommand .= ' '.$this->table;
+				$keyString='';
+				$valueString='';
 				foreach ($this->arrInsert as $key=>$value){
+					Logger::debug('insert %s %s',$key, $value);
 					$keyString .= $key.',';
 					if(stristr($key,'name') != false){
-						$valueString .= '\"'.$value.'\",';
+						$valueString .= '"'.$value[1].'",';
+					}else{
+						$valueString .=$value[1].',';
 					}
 				}
 				$keyString = substr($keyString, 0, -1);
@@ -275,7 +280,7 @@ class Data {
 	public function insertInto($table)
 	{
 	
-		$this->setTable ( $table );
+		$this->from ( $table );
 		$this->command = 'insertInto';
 		return $this;
 	}
@@ -292,7 +297,7 @@ class Data {
 	public function insertIgnore($table)
 	{
 	
-		$this->setTable ( $table );
+		$this->from ( $table );
 		$this->command = 'insertIgnore';
 		return $this;
 	}

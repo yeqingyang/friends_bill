@@ -16,7 +16,7 @@
 </form>
 <form action="index.php" method="get">
 查看所有用户<br>
-<input type="submit">
+<input type="submit" name="button" value="查看">
 </form>
 </body>
 </html>

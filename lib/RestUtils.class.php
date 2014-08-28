@@ -36,7 +36,8 @@ class RestUtils {
 			// new user create
 			case 'post' :
 				if(isset($_POST['username'])){
-					$user = new OneUser($_POST['username']);
+					$user = new OneUser($_POST['username'],$_POST['birthday']);
+					Logger::info('add user name %s',$_POST['username']);
 				}else{
 					break;
 				}

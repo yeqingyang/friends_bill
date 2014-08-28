@@ -11,8 +11,10 @@ class OneUser{
 	private $last_login_time;
 	private $online_accum_time;
 	
-	public function OneUser($name){
+	public function OneUser($name,$birthday=0){
 		$this->uname = $name;
+		$this->birthday = strtotime($birthady);
+		$this->create_time = time();
 	}
 	
 	public function setUid($uid){
@@ -59,6 +61,7 @@ class OneUser{
 // 		if(isset($this->uid)){
 // 			$info[UserDef::SQL_USER_UID]=$this->uid;
 // 		}
+		return $info;
 		
 	}
 }
