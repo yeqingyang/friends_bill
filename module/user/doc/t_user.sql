@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS `t_user`
 	`uid`	int(10) unsigned not null auto_increment comment '���uid',
 	`usetime` int(10) unsigned not null default 0 comment '�ϴε�¼ʱ��',
 	`uname`	varchar(16) not null comment '�û�uname',
+	`email`  varchar(16) not null default '' comment 'email',		
 	`status` int unsigned not null default 1 comment '�û�״̬��0��deleted��1��online, 2��offline, 3:suspend ',
 	`create_time` int unsigned not null default 0 comment '�û�����ʱ��',
 	`dtime` int unsigned default 0 comment '�û�ɾ��ʱ��',
