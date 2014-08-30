@@ -18,10 +18,11 @@ try {
     //Set the database service
     $di->set('db', function(){
         return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-            "host" => "127.0.0.1",
+            "host" => "192.168.1.41",
             "username" => "root",
             "password" => "",
-            "dbname" => "friends_bill"
+            "dbname" => "friends_bill",
+        	"charset" => "utf8"
         ));
     });
 
@@ -34,7 +35,7 @@ try {
  
     $di->set('url', function(){
     	$url = new \Phalcon\Mvc\Url();
-    	$url->setBaseUri('/tutorial/');
+    	$url->setBaseUri('/');
     	return $url;
     });
 
