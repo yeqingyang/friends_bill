@@ -1,5 +1,7 @@
 <?php
 
+//require '../def/Classes.def.php';
+//require_once '../lib/MyAutoLoad.class.php';
 try {
 
     //Register an autoloader
@@ -18,7 +20,7 @@ try {
     //Set the database service
     $di->set('db', function(){
         return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-            "host" => "192.168.1.41",
+            "host" => "127.0.0.1",
             "username" => "root",
             "password" => "",
             "dbname" => "friends_bill",

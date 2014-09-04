@@ -5,9 +5,9 @@ class Users extends Phalcon\Mvc\Model
 	public $name;
 	public $email;
 	private $app;
-	private $table = 't_user';
+	private $table = 'users';
 	
-	function __construct(){
+	public function init(){
 		//Register an autoloader
 		$loader = new \Phalcon\Loader();
 		$loader->registerDirs(
@@ -24,7 +24,7 @@ class Users extends Phalcon\Mvc\Model
 		//Set the database service
 		$di->set('db', function(){
 			return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-					"host" => "192.168.1.41",
+					"host" => "127.0.0.1",
 					"username" => "root",
 					"password" => "",
 					"dbname" => "friends_bill",
@@ -35,12 +35,13 @@ class Users extends Phalcon\Mvc\Model
     	$this->app->setDI($di);
 	}
 	
-	public function save(){
-		$phql= "insert into :table: ('uname','email') value (:uname:, :email:);";
-		$status = $this->app->modelsManager->executeQuery($phql, 
-				array('table'=>$this->table, 
-						'uname'=>$this->name,
-						'email'=>$this->email
+	public function save($data=NULL,$whitelist=NULL){
+		//$this->init();
+		$phql= "insert into $this->table (uname, email) "." values ( :v_uname: , :v_email:)";
+		$status = $this->getModelsManager()->executeQuery($phql, 
+				array( 
+						'v_uname'=>$this->name,
+						'v_email'=>$this->email,
 		));
 		//Create a response
 		$response = new Phalcon\Http\Response();
@@ -49,7 +50,7 @@ class Users extends Phalcon\Mvc\Model
 			//Change the HTTP status
 			$response->setStatusCode(201, "Created");
 			$robot->id = $status->getModel()->id;
-			$response->setJsonContent(array(’status’ => ’OK’, ’data’ => $robot));
+			$response->setJsonContent(array(’status’ => ’OK’, ’data’ => 'ok'));
 		} else {
 			//Change the HTTP status
 			$response->setStatusCode(409, "Conflict");
@@ -60,6 +61,6 @@ class Users extends Phalcon\Mvc\Model
 			}
 			$response->setJsonContent(array(’status’ => ’ERROR’, ’messages’ => $errors));
 		}
-		return $response;
+		return true;
 	}
 }
