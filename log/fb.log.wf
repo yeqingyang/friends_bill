@@ -1,0 +1,14 @@
+[20140821 23:17:05 712673][FATAL][/home/lpz/friends/friends_bill/lib/Data.class.php:323]empty values not allowed
+[20140914 09:21:26 636581][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:329]empty values not allowed
+[20140914 09:24:51 530816][WARNING][/home/lpz/friends/friends_bill/app/models/Users.php:52]no name
+[20140914 09:24:51 536625][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:329]empty values not allowed
+[20140914 10:49:03 245981][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:371]invalid option, three values required
+[20140914 10:50:57 179492][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:371]invalid option, three values required
+[20140914 16:08:50 133744][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
+[20140915 07:57:38 377267][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:390]operand = must operate on number, field:uname is not
+[20140915 08:00:32 536165][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
+[20140915 08:02:22 125615][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
+[20140915 08:02:45 031838][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
+[20140915 08:10:24 715980][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
+[20140915 08:11:17 389308][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
+[20140915 08:13:04 762549][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!

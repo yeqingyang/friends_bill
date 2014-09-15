@@ -1,0 +1,14 @@
+<h2>getusers using this form</h2>
+
+<?php echo Phalcon\Tag::form('getusers/getusers') ?>
+	
+	<p>
+		<label for="name">Name</label>
+		<?php echo Phalcon\Tag::textField("name") ?>
+	</p>
+
+	<p>
+		<?php echo Phalcon\Tag::submitButton("getusers") ?>
+	</p>
+
+</form>
