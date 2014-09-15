@@ -1,12 +1,15 @@
 <?php
-
+use Phalcon\Logger\Adapter\File as FileAdapter;
 class Users extends Phalcon\Mvc\Model
 {
 	public $name;
 	public $email;
 	private $app;
 	private $table = 'users';
-	
+	private $logger;	
+	public function log(){
+		$logger = new FileAdapter("app/logs/test.log");
+	}
 	public function init(){
 		//Register an autoloader
 		$loader = new \Phalcon\Loader();
@@ -37,30 +40,39 @@ class Users extends Phalcon\Mvc\Model
 	
 	public function save($data=NULL,$whitelist=NULL){
 		//$this->init();
-		$phql= "insert into $this->table (uname, email) "." values ( :v_uname: , :v_email:)";
-		$status = $this->getModelsManager()->executeQuery($phql, 
-				array( 
-						'v_uname'=>$this->name,
-						'v_email'=>$this->email,
-		));
-		//Create a response
-		$response = new Phalcon\Http\Response();
-		//Check if the insertion was successful
-		if ($status->success() == true) {
-			//Change the HTTP status
-			$response->setStatusCode(201, "Created");
-			$robot->id = $status->getModel()->id;
-			$response->setJsonContent(array(’status’ => ’OK’, ’data’ => 'ok'));
-		} else {
-			//Change the HTTP status
-			$response->setStatusCode(409, "Conflict");
-			//Send errors to the client
-			$errors = array();
-			foreach ($status->getMessages() as $message) {
-				$errors[] = $message->getMessage();
-			}
-			$response->setJsonContent(array(’status’ => ’ERROR’, ’messages’ => $errors));
+	//	$phql= "insert into $this->table (uname, email) "." values ( :v_uname: , :v_email:)";
+		
+		Logger::info("before get %s %s",$this->name, $this->email);
+		//$query = new Phalcon\Mvc\Model\Query($phql, $this->getDI());
+		$info=array();
+		if(isset($this->name)){
+			$info[UserDef::SQL_USER_UNAME]=$this->name;
+			$info[UserDef::SQL_USER_EMAIL]=$this->email;
+		}else{
+			Logger::warning("no name");
 		}
+		$ret=UserDao::insert($info);
+		if($ret != 'ok'){
+			Logger::info('insert err');
+		}
+		Logger::info('here error');
 		return true;
+	}
+	
+	public function getUsers($name=NULL){
+		$selectfield=array(
+			UserDef::SQL_USER_UID,
+			UserDef::SQL_USER_UNAME,
+			UserDef::SQL_USER_EMAIL,
+			UserDef::SQL_USER_BIRTHDAY,
+			UserDef::SQL_USER_GOLD_NUM,
+			);
+		$wheres = array(array(UserDef::SQL_USER_UID,'>',0));
+		if(!empty($name)){
+			$wheres[]=array( UserDef::SQL_USER_UNAME,'like',$name);
+		}
+		$ret=UserDao::getInfo($selectfield,$wheres);
+		Logger::info('user %s', $ret);
+		echo json_encode($ret);
 	}
 }
