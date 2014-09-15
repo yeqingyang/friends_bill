@@ -17,6 +17,7 @@ class GetusersController extends Phalcon\Mvc\Controller
 
 		$user = new Users();
 		$user->getUsers($name);
+		echo Phalcon\Tag::linkTo("index","<p>Back");
 	}
 
 }

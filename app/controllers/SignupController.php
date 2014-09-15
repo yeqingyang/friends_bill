@@ -21,12 +21,14 @@ class SignupController extends Phalcon\Mvc\Controller
 
 		//Store and check for errors
 		if ($user->save() == true) {
-			echo 'Thanks for register!';
+			echo 'Thanks for register!</p>';
+			echo Phalcon\Tag::linkTo("index","Back");
 		} else {
 			echo 'Sorry, the next problems were generated: ';
 			foreach ($user->getMessages() as $message){
 				echo $message->getMessage(), '<br/>';
 			}
+			echo Phalcon\Tag::linkTo("index","Back");	
 		}
 	}
 

@@ -50,12 +50,12 @@ class Users extends Phalcon\Mvc\Model
 			$info[UserDef::SQL_USER_EMAIL]=$this->email;
 		}else{
 			Logger::warning("no name");
+			echo Phalcon\Tag::linkTo("index", "Back!");
 		}
 		$ret=UserDao::insert($info);
 		if($ret != 'ok'){
 			Logger::info('insert err');
 		}
-		Logger::info('here error');
 		return true;
 	}
 	
