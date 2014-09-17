@@ -254,6 +254,31 @@ class Data {
 				$valueString='';
 				foreach ($this->arrInsert as $key=>$value){
 					Logger::debug('insert %s %s',$key, $value);
+					if(substr($key,0,2)=='va'){
+						$value[1]=serialize($value[1]);
+					}
+					$keyString .= $key.',';
+					if(stristr($key,'name') != false || stristr($key,'mail') != false){
+						$valueString .= '"'.$value[1].'",';
+					}else{
+						$valueString .=$value[1].',';
+					}
+				}
+				$keyString = substr($keyString, 0, -1);
+				$valueString = substr($valueString, 0, -1);
+				$finalCommand .= '('.$keyString.') values ('.$valueString.')';
+				break;
+			case 'update':
+				Logger::debug('arrUpdate %s', $this->arrUpdate);
+				$finalCommand .= 'update';
+				$finalCommand .= ' '.$this->table;
+				$keyString='';
+				$valueString='';
+				foreach ($this->arrUpdate as $key=>$value){
+					Logger::debug('update %s %s',$key, $value);
+					if(substr($key,0,2)=='va'){
+						$value[1]=serialize($value[1]);
+					}
 					$keyString .= $key.',';
 					if(stristr($key,'name') != false || stristr($key,'mail') != false){
 						$valueString .= '"'.$value[1].'",';
@@ -309,6 +334,47 @@ class Data {
 	
 		$this->from ( $table );
 		$this->command = 'insertIgnore';
+		return $this;
+	}
+	
+	/**
+	 * update子句
+	 *
+	 * @param string $table
+	 *
+	 * @return CData
+	 *
+	 * @author
+	 */
+	public function update($table)
+	{
+	
+		$this->setTable ( $table );
+		$this->command = 'update';
+		return $this;
+	}
+	
+	/**
+	 * set子句
+	 *
+	 * @param array $arrUpdate
+	 *
+	 * @return CData
+	 *
+	 * @throws Exception 如果command!=update,则throw Exception
+	 *
+	 * @author
+	 */
+	public function set($arrUpdate)
+	{
+	
+		if ($this->command != 'update')
+		{
+			$this->reset ();
+			Logger::fatal ( "call update first" );
+			throw new Exception ( "inter" );
+		}
+		$this->arrUpdate = $this->escapeBody ( $arrUpdate );
 		return $this;
 	}
 	
