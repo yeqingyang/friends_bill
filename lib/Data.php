@@ -182,6 +182,9 @@ class Data {
 					if (count ( $row ) >= count ( $this->arrSelect )) {
 						$arrTmpRow = array ();
 						foreach ( $this->arrSelect as $col ) {
+							if(substr($col,0,2)=='va'){
+								$row[$col] = unserialize($row[$col]);
+							}
 							$arrTmpRow [$col] = $row [$col];
 						}
 						$arrReturn [] = $arrTmpRow;
@@ -254,11 +257,14 @@ class Data {
 				$valueString='';
 				foreach ($this->arrInsert as $key=>$value){
 					Logger::debug('insert %s %s',$key, $value);
+					if(substr($key,0,2)=='va'){
+						$value[1]=serialize($value[1]);
+					}
 					$keyString .= $key.',';
 					if(stristr($key,'name') != false || stristr($key,'mail') != false){
 						$valueString .= '"'.$value[1].'",';
 					}else{
-						$valueString .=$value[1].',';
+						$valueString .= $value[1].',';
 					}
 				}
 				$keyString = substr($keyString, 0, -1);
