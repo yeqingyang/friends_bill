@@ -182,6 +182,9 @@ class Data {
 					if (count ( $row ) >= count ( $this->arrSelect )) {
 						$arrTmpRow = array ();
 						foreach ( $this->arrSelect as $col ) {
+							if(substr($col,0,2)=='va'){
+								$row[$col] = unserialize($row[$col]);
+							}
 							$arrTmpRow [$col] = $row [$col];
 						}
 						$arrReturn [] = $arrTmpRow;
