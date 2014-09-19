@@ -271,7 +271,7 @@ class Data {
 			case 'update':
 				Logger::debug('arrUpdate %s', $this->arrUpdate);
 				$finalCommand .= 'update';
-				$finalCommand .= ' '.$this->table;
+				$finalCommand .= ' '.$this->table.' set ';
 				$keyString='';
 				$valueString='';
 				foreach ($this->arrUpdate as $key=>$value){
@@ -279,16 +279,40 @@ class Data {
 					if(substr($key,0,2)=='va'){
 						$value[1]=serialize($value[1]);
 					}
-					$keyString .= $key.',';
-					if(stristr($key,'name') != false || stristr($key,'mail') != false){
-						$valueString .= '"'.$value[1].'",';
-					}else{
-						$valueString .=$value[1].',';
+					$finalCommand .= $key.' = '.$value[1].' '; 
+				}
+				$wnum=0;
+				foreach ( $this->arrWhere as $key => $value ) {
+					if($wnum++>0){
+						$finalCommand .= ' and ';
+					}
+					switch ($value [0]) {
+						case '>' :
+						case '<' :
+						case '>=' :
+						case '<=' :
+						case '!=' :
+						case '=' :
+							$finalCommand .= $key . ' '. $value [0] . $value [1];
+							break;
+						case 'BETWEEN' :
+							$finalCommand .= $key . ' '. $value [0] . $value [1] [0] . ' and ' . $value [1] [1];
+							break;
+						case 'NOT IN' :
+						case 'IN' :
+							$finalCommand .= $key . ' '. $value [0] . ' (' . implode ( ',', $value ) . ')';
+							break;
+						case '==' :
+						case '!==' :
+						case 'LIKE' :
+							$finalCommand .= $key . ' '. $value [0] . ' "' . $value [1] . '"';
+							break;
+						default :
+							$this->reset ();
+							Logger::fatal ( "unsupported operand %s", $key );
+							throw new Exception ( "inter" );
 					}
 				}
-				$keyString = substr($keyString, 0, -1);
-				$valueString = substr($valueString, 0, -1);
-				$finalCommand .= '('.$keyString.') values ('.$valueString.')';
 				break;
 				
 		}
