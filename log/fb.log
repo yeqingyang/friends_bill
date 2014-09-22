@@ -3455,6 +3455,7 @@
   ),
 )
 [20140915 22:03:54 292306][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+<<<<<<< HEAD
 [20140917 14:12:59 761796][INFO][/home/pirate/lpz/web/friends_bill/public/index.php:53]start
 [20140917 14:13:04 632538][INFO][/home/pirate/lpz/web/friends_bill/public/index.php:53]start
 [20140917 14:13:06 377454][INFO][/home/pirate/lpz/web/friends_bill/public/index.php:53]start
@@ -3470,3 +3471,289 @@
 [20140917 15:57:56 935756][INFO][/home/pirate/lpz/web/friends_bill/public/index.php:53]start
 [20140917 15:57:57 711612][INFO][/home/pirate/lpz/web/friends_bill/public/index.php:53]start
 [20140917 16:21:28 942229][INFO][/home/pirate/lpz/web/friends_bill/public/index.php:53]start
+=======
+[20140918 08:28:10 217082][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:28:10 531848][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:28:59 777543][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:28:59 963740][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:31:48 933471][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:31:49 106888][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:31:51 686309][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:31:51 835302][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:32:07 371627][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:32:09 160196][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:32:09 338420][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:32:13 477546][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:32:13 680147][INFO][/home/lpz/friends/friends_bill/lib/Data.php:168]Data start query
+[20140918 08:32:13 680929][INFO][/home/lpz/friends/friends_bill/lib/Data.php:288]final command: select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140918 08:32:13 681118][INFO][/home/lpz/friends/friends_bill/lib/Data.php:173]final command:select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140918 08:32:13 860643][INFO][/home/lpz/friends/friends_bill/app/models/Users.php:75]user array (
+  0 => 
+  array (
+    'uid' => '1000',
+    'uname' => 'lpz',
+    'email' => 'lpz8120903@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  1 => 
+  array (
+    'uid' => '1001',
+    'uname' => 'lili',
+    'email' => 'lili@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  2 => 
+  array (
+    'uid' => '1002',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  3 => 
+  array (
+    'uid' => '1003',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+)
+[20140918 08:32:13 992932][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:32:16 113630][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:32:16 232421][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:51:07 072619][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:51:07 486808][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:52:03 534840][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:52:03 707524][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:53:54 494055][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:53:54 663105][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:03 827745][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:03 934429][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:05 986833][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:07 069461][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:07 347815][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:12 987817][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:14 074741][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:14 209336][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:54:17 980686][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:59:26 134629][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:59:26 326035][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:59:28 043223][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:59:35 675504][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 08:59:35 882428][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 09:00:18 463691][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 09:00:18 591838][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:07:49 497874][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:07:49 876703][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:08:00 377750][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:08:00 924545][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:08:56 477269][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:08:56 677393][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:27 814397][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:27 924399][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:30 705011][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:30 895398][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:34 702983][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:34 884982][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:37 334416][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:37 502441][INFO][/home/lpz/friends/friends_bill/lib/Data.php:168]Data start query
+[20140918 21:21:37 502939][INFO][/home/lpz/friends/friends_bill/lib/Data.php:288]final command: select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140918 21:21:37 503097][INFO][/home/lpz/friends/friends_bill/lib/Data.php:173]final command:select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140918 21:21:37 611765][INFO][/home/lpz/friends/friends_bill/app/models/Users.php:75]user array (
+  0 => 
+  array (
+    'uid' => '1000',
+    'uname' => 'lpz',
+    'email' => 'lpz8120903@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  1 => 
+  array (
+    'uid' => '1001',
+    'uname' => 'lili',
+    'email' => 'lili@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  2 => 
+  array (
+    'uid' => '1002',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  3 => 
+  array (
+    'uid' => '1003',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+)
+[20140918 21:21:37 736509][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:40 140207][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:40 259764][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:46 883713][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:47 016154][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:56 868222][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:56 976232][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:58 990022][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:21:59 134464][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:22:02 543563][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:22:02 664565][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:22:04 911019][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:22:05 039989][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:24:16 214438][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:24:16 332208][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:24:19 374353][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:24:19 514391][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:24:27 237601][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:24:27 354738][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:28:39 223453][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:28:39 376262][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:28:59 626969][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:28:59 735715][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:24 267550][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:24 399606][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:37 613054][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:37 716330][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:40 264039][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:40 405581][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:42 492381][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:42 637055][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:45 613912][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:41:45 735224][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:36 085817][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:36 239402][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:43 016097][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:43 158469][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:51 829626][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:51 974470][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:53 765587][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:44:53 790920][INFO][/home/lpz/friends/friends_bill/lib/Data.php:168]Data start query
+[20140918 21:44:53 791105][INFO][/home/lpz/friends/friends_bill/lib/Data.php:288]final command: select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140918 21:44:53 791201][INFO][/home/lpz/friends/friends_bill/lib/Data.php:173]final command:select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140918 21:44:53 793148][INFO][/home/lpz/friends/friends_bill/app/models/Users.php:75]user array (
+  0 => 
+  array (
+    'uid' => '1000',
+    'uname' => 'lpz',
+    'email' => 'lpz8120903@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  1 => 
+  array (
+    'uid' => '1001',
+    'uname' => 'lili',
+    'email' => 'lili@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  2 => 
+  array (
+    'uid' => '1002',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  3 => 
+  array (
+    'uid' => '1003',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+)
+[20140918 21:44:53 939751][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:14 463642][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:14 620405][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:17 672242][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:17 799651][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:21 217281][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:21 352448][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:36 923206][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:37 047870][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:38 021844][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:38 161779][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:40 426052][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:40 551735][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:43 368249][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:43 491657][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:45 248472][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:45 370523][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:46 810309][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:46 952817][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:48 490064][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:46:48 619841][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:48:18 050076][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:48:18 218513][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:25 493087][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:25 610338][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:26 644152][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:26 733805][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:27 695059][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:27 858645][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:29 435110][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:29 534128][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:30 702577][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:50:30 848180][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:15 529823][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:15 657606][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:51 265691][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:51 402731][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:57 684651][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:57 817511][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:59 121473][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:52:59 274963][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:03 249178][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:03 418090][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:05 650044][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:05 767892][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:07 515329][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:07 664233][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:09 073410][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:09 174885][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:10 357504][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:10 503444][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:20 963740][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:53:21 093155][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:54:14 870701][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:54:15 042596][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:54:29 408200][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:54:31 023953][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:54:31 154245][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:59:50 065275][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 21:59:50 209886][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:03 622681][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:03 758057][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:04 658329][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:04 778829][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:06 567039][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:06 748248][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:09 175236][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:09 326487][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:11 387542][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:11 506667][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:13 432358][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:00:13 557585][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:18 036509][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:18 197440][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:19 738469][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:19 877690][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:27 551417][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:30 551389][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:30 691200][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:31 691972][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:31 821080][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:33 913329][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140918 22:05:34 009128][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+>>>>>>> f536208e4f905783e72f7cc24526c7221ee9b95f
