@@ -12,3 +12,5 @@
 [20140915 08:10:24 715980][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
 [20140915 08:11:17 389308][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
 [20140915 08:13:04 762549][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:199]mysql query error!
+[20140922 08:37:00 205725][WARNING][/home/lpz/friends/friends_bill/app/models/Users.php:52]no name
+[20140922 08:37:00 387535][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:432]empty values not allowed

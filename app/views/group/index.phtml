@@ -1,7 +1,7 @@
 <h2>Group using this form</h2>
 <body>
 
-<?php echo Phalcon\Tag::form('group/register') ?>
+<?php echo Phalcon\Tag::form(array('group/register','method'=>'post')) ?>
 	
 	<p>
 		<label for="name">Name</label>
