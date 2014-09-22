@@ -3739,3 +3739,74 @@
 [20140918 22:05:31 821080][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
 [20140918 22:05:33 913329][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
 [20140918 22:05:34 009128][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:06 414952][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:06 981985][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:11 742554][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:11 976226][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:13 106940][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:13 223736][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:14 282262][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:14 452059][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:16 220527][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:17 763147][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:01:17 877392][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:20:46 394727][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:20:46 520290][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:22:30 224779][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:22:30 400657][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:22:45 693441][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:22:45 928764][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:31:49 882999][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:31:52 761155][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:31:52 833959][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:00 160963][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:00 205339][INFO][/home/lpz/friends/friends_bill/app/models/Users.php:45]before get  
+[20140922 08:37:00 205725][WARNING][/home/lpz/friends/friends_bill/app/models/Users.php:52]no name
+[20140922 08:37:00 387535][FATAL][/home/lpz/friends/friends_bill/lib/Data.php:432]empty values not allowed
+[20140922 08:37:00 538372][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:10 200922][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:12 657758][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:12 754898][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:15 481105][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:15 621366][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:25 160250][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:25 210698][INFO][/home/lpz/friends/friends_bill/lib/Data.php:168]Data start query
+[20140922 08:37:25 210833][INFO][/home/lpz/friends/friends_bill/lib/Data.php:323]final command: select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140922 08:37:25 210884][INFO][/home/lpz/friends/friends_bill/lib/Data.php:173]final command:select uid,uname,email,birthday,gold_num from t_user where uid >0;
+[20140922 08:37:25 245880][INFO][/home/lpz/friends/friends_bill/app/models/Users.php:75]user array (
+  0 => 
+  array (
+    'uid' => '1000',
+    'uname' => 'lpz',
+    'email' => 'lpz8120903@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  1 => 
+  array (
+    'uid' => '1001',
+    'uname' => 'lili',
+    'email' => 'lili@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  2 => 
+  array (
+    'uid' => '1002',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+  3 => 
+  array (
+    'uid' => '1003',
+    'uname' => 'lishunpin',
+    'email' => 'lishunpin08@163.com',
+    'birthday' => '0',
+    'gold_num' => '0',
+  ),
+)
+[20140922 08:37:25 359914][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:43 735959][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
+[20140922 08:37:43 858937][INFO][/home/lpz/friends/friends_bill/public/index.php:53]start
