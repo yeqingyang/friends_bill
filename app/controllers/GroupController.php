@@ -5,7 +5,7 @@ class GroupController extends Phalcon\Mvc\Controller
 
 	public function indexAction()
 	{
-
+		echo "hello in group";
 	}
 
 	public function registerAction()
@@ -29,6 +29,24 @@ class GroupController extends Phalcon\Mvc\Controller
 			}
 			echo Phalcon\Tag::linkTo("index","Back");	
 		}
+	}
+	
+	public function getGroupAction($name=NULL)
+	{
+	
+		$phql = "SELECT * FROM Group";
+		echo $phql;
+		$query = $this->modelsManager->createQuery( $phql );
+		$groups = $query->execute();
+		echo 'ok';
+		$data = array ();
+		foreach ( $groups as $group ) {
+			$data [] = array (
+					id => $group->id,
+					name => $group->name 
+			);
+		}
+		echo json_encode($data);
 	}
 
 }

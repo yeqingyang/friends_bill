@@ -1,50 +1,72 @@
 <?php
-use Phalcon\Logger\Adapter\File as FileAdapter;
 class Group extends Phalcon\Mvc\Model
 {
-	public $name;
-	private $app;
-	private $table = 't_group';
-	private $logger;	
-	public function log(){
-		$logger = new FileAdapter("app/logs/test.log");
+	public $gid;
+	public $gname;
+	public $uid;
+	public $create_time;
+	public $status;	
+	public $va_user;
+	
+	public function getSource(){
+		return 't_group';
 	}
 	
-	public function save($data=NULL,$whitelist=NULL){
-		//$this->init();
-	//	$phql= "insert into $this->table (uname, email) "." values ( :v_uname: , :v_email:)";
+	public function initialize(){
 		
-		Logger::info("before get %s %s",$this->name, $this->email);
-		//$query = new Phalcon\Mvc\Model\Query($phql, $this->getDI());
-		$info=array();
-		if(isset($this->name)){
-			$info[UserDef::SQL_USER_UNAME]=$this->name;
-			$info[UserDef::SQL_USER_EMAIL]=$this->email;
-		}else{
-			Logger::warning("no name");
-			echo Phalcon\Tag::linkTo("index", "Back!");
-		}
-		$ret=UserDao::insert($info);
-		if($ret != 'ok'){
-			Logger::info('insert err');
-		}
-		return true;
 	}
+	// Use Loader() to autoload our model
+	// $loader = new \Phalcon\Loader();
+	// $loader->registerDirs(
+	// 			array(
+	// 				'../app/controllers/',
+	// 				'../app/models/',
+	// 				'../lib/',
+	// 				'../def/',
+	// 				)
+	// 			)->register();
+	// $di = new \Phalcon\DI\FactoryDefault();
+	// //Set up the database service
+	// $di->set('db', function(){
+	// 	return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
+	// 			"host" => "192.168.1.41",
+	// 			"username" => "root",
+	// 			"password" => "",
+	// 			"dbname" => "frends_bill"
+	// 	));
+	// });
+	// $app = new Phalcon\Mvc\Micro($di);
+	// //Retrieves all group
+	// $app->get('/group', function() use($app){
+	// 	$phql = "SELECT * FROM t_group ORDER BY name";
+	// 	echo $phql;
+	// // 	return;
+	// 	$groups = $app->modelsManager->executeQuery($phql);
+	// 	echo 'ok';
+	// 	$data = array();
+	// 	foreach ($groups as $group) {
+	// 		$data[] = array(
+	// 				’id’ => $group->id,
+	// 				’name’ => $group->name,
+	// 		);
+	// 	}
+	// 	echo json_encode($data);
+	// });
+	// //Searches for group with $name in their name
+	// $app->get('/group/search/{name}', function($name) {
+	// });
+	// //Retrieves group based on primary key
+	// $app->get('/group/{id:[0-9]+}', function($id) {
+	// });
+	// //Adds a new group
+	// $app->post('/group', function() {
+	// });
+	// //Updates group based on primary key
+	// $app->put('/group/{id:[0-9]+}', function() {
+	// });
+	// //Deletes group based on primary key
+	// $app->delete('/group/{id:[0-9]+}', function() {
+	// });
+	// $app->handle();
 	
-	public function getUsers($name=NULL){
-		$selectfield=array(
-			UserDef::SQL_USER_UID,
-			UserDef::SQL_USER_UNAME,
-			UserDef::SQL_USER_EMAIL,
-			UserDef::SQL_USER_BIRTHDAY,
-			UserDef::SQL_USER_GOLD_NUM,
-			);
-		$wheres = array(array(UserDef::SQL_USER_UID,'>',0));
-		if(!empty($name)){
-			$wheres[]=array( UserDef::SQL_USER_UNAME,'like',$name);
-		}
-		$ret=UserDao::getInfo($selectfield,$wheres);
-		Logger::info('user %s', $ret);
-		echo json_encode($ret);
-	}
 }
