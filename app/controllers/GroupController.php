@@ -8,42 +8,18 @@ class GroupController extends Phalcon\Mvc\Controller
 		echo "hello in group";
 	}
 
-	public function registerAction()
-	{
-
-		//Request variables from html form
-		$name = $this->request->getPost('name', 'string');
-		$member = $this->request->getPost('member', 'string');
-
-		$group = new Group();
-		$group->name = $name;
-
-		//Store and check for errors
-		if ($user->save() == true) {
-			echo 'Thanks for register!</p>';
-			echo Phalcon\Tag::linkTo("index","Back");
-		} else {
-			echo 'Sorry, the next problems were generated: ';
-			foreach ($user->getMessages() as $message){
-				echo $message->getMessage(), '<br/>';
-			}
-			echo Phalcon\Tag::linkTo("index","Back");	
-		}
-	}
-	
 	public function getGroupAction($name=NULL)
 	{
-	
-		$phql = "SELECT * FROM Group";
-		echo $phql;
-		$query = $this->modelsManager->createQuery( $phql );
-		$groups = $query->execute();
-		echo 'ok';
+		$group = new Group();
+		$groups = $group->getGroup();
+// 		$phql = "SELECT * FROM Group";
+// 		$query = $this->modelsManager->createQuery( $phql );
+// 		$groups = $query->execute();
 		$data = array ();
 		foreach ( $groups as $group ) {
 			$data [] = array (
-					id => $group->id,
-					name => $group->name 
+					id => $group->gid,
+					name => $group->gname 
 			);
 		}
 		echo json_encode($data);

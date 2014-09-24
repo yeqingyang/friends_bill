@@ -1,15 +1,5 @@
 <?php
 
-//require '../def/Classes.def.php';
-//require_once '../lib/MyAutoLoad.class.php';
-// global funciton to retrive $di
-if (!function_exists("getDI")) {
-	function getDI()
-	{
-		return \Phalcon\DI::getDefault();
-		// return $GLOBALS['di'];
-	}    
-}
 try {
 
 	//Register an autoloader
