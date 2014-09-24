@@ -4,7 +4,7 @@
 	
 	<p>
 		<label for="name">Name</label>
-		<?php echo Phalcon\Tag::textField("name") ?>
+		<?php echo Phalcon\Tag::textField("gname") ?>
 	</p>
 
 	<p>
@@ -13,3 +13,32 @@
 
 </form>
 
+<?php echo Phalcon\Tag::form(array('group/addGroup','method'=>'post')) ?>
+	
+	<p>
+		<label for="name">Name</label>
+		<?php echo Phalcon\Tag::textField("gname") ?>
+	</p>
+
+	<p>
+		<?php echo Phalcon\Tag::submitButton("addGroup") ?>
+	</p>
+
+</form>
+
+<?php echo Phalcon\Tag::form(array('group/addUserGroup','method'=>'post')) ?>
+	
+	<p>
+		<label for="name">GID</label>
+		<?php echo Phalcon\Tag::textField("gid") ?>
+	</p>
+	<p>
+		<label for="name">UID</label>
+		<?php echo Phalcon\Tag::textField("uid") ?>
+	</p>
+
+	<p>
+		<?php echo Phalcon\Tag::submitButton("addUserGroup") ?>
+	</p>
+
+</form>

@@ -15,12 +15,5 @@ class Group extends Phalcon\Mvc\Model
 	public function initialize(){
 		
 	}
-	public function getGroup($name=NULL){
-		// Instantiate the Query
-		$query = new Phalcon\Mvc\Model\Query("insert into * FROM Group ORDER BY game", $this->getDI());
-		// Execute the query returning a result if any
-		$ret = $query->execute();
-		return $ret;
-	}
 	
 }

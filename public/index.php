@@ -21,7 +21,7 @@ try {
 			return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
 					"host" => "192.168.1.41",
 					"username" => "root",
-					"password" => "",
+					"password" => "123456",
 					"dbname" => "friends_bill",
 					"charset" => "utf8"
 					));
