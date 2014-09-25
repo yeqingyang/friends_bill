@@ -1,15 +1,5 @@
 <?php
 
-//require '../def/Classes.def.php';
-//require_once '../lib/MyAutoLoad.class.php';
-// global funciton to retrive $di
-if (!function_exists("getDI")) {
-	function getDI()
-	{
-		return \Phalcon\DI::getDefault();
-		// return $GLOBALS['di'];
-	}    
-}
 try {
 
 	//Register an autoloader
@@ -29,9 +19,9 @@ try {
 	//Set the database service
 	$di->set('db', function(){
 			return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-					"host" => "127.0.0.1",
+					"host" => "192.168.1.41",
 					"username" => "root",
-					"password" => "",
+					"password" => "123456",
 					"dbname" => "friends_bill",
 					"charset" => "utf8"
 					));
