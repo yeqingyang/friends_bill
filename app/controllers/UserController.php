@@ -54,7 +54,7 @@ class UserController extends Phalcon\Mvc\Controller
 			echo "password not same!";
 			return;
 		}
-		$user->password = $this->request->get('password','string');
+		$user->password = md5($p1);
 		$ret = $user->save();
 		if(!$ret){
 			foreach ($user->getMessages() as $message) {
