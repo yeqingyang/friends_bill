@@ -32,9 +32,9 @@ class SessionController extends ControllerBase
                 return false;
             }
 
-            $user = new Users();
+            $user = new User();
             $user->username = $username;
-            $user->password = sha1($password);
+            $user->password = md5($password);
             $user->name = $name;
             $user->email = $email;
             $user->created_at = new Phalcon\Db\RawValue('now()');

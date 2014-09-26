@@ -8,6 +8,7 @@ try {
 			array(
 				'../app/controllers/',
 				'../app/models/',
+				'../app/library/',
 				'../lib/',
 				'../def/',
 				)
@@ -19,9 +20,9 @@ try {
 	//Set the database service
 	$di->set('db', function(){
 			return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-					"host" => "127.0.0.1",
+					"host" => "192.168.1.41",
 					"username" => "root",
-					"password" => "",
+					"password" => "123456",
 					"dbname" => "friends_bill",
 					"charset" => "utf8"
 					));
@@ -32,7 +33,9 @@ try {
 			$view = new \Phalcon\Mvc\View();
 			$view->setViewsDir('../app/views/');
 			$view->registerEngines(array(
-					".volt" => 'Phalcon\Mvc\View\Engine\Volt'
+					".volt" => 'Phalcon\Mvc\View\Engine\Volt',
+					".phtml" => 'Phalcon\Mvc\View\Engine\Php',
+					".php" => 'Phalcon\Mvc\View\Engine\Php'
 			));
 			return $view;
 			});
@@ -42,6 +45,11 @@ try {
 			$url->setBaseUri('/');
 			return $url;
 			});
+	$di->set('session', function(){
+			$session = new Phalcon\Session\Adapter\Files();
+			$session->start();
+			return $session;
+		});
 	Logger::init("../log/fb.log", 1);
 	Logger::info('start');
 
