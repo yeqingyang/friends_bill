@@ -19,9 +19,9 @@ try {
 	//Set the database service
 	$di->set('db', function(){
 			return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-					"host" => "192.168.1.41",
+					"host" => "127.0.0.1",
 					"username" => "root",
-					"password" => "123456",
+					"password" => "",
 					"dbname" => "friends_bill",
 					"charset" => "utf8"
 					));
