@@ -8,7 +8,7 @@ class IndexController extends ControllerBase
 	}
 
 	public function IndexAction(){
-		
+		$this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_AFTER_TEMPLATE);
 	}
 
 }
