@@ -75,9 +75,9 @@ class SessionController extends ControllerBase
             $email = $this->request->getPost('email', 'email');
 
             $password = $this->request->getPost('password');
-            $password = sha1($password);
+            $password = md5($password);
 
-            $user = Users::findFirst("email='$email' AND password='$password' AND active='Y'");
+            $user = User::findFirst("email='$email' AND password='$password' AND status='1'");
             if ($user != false) {
                 $this->_registerSession($user);
                 $this->flash->success('Welcome ' . $user->name);
@@ -85,7 +85,7 @@ class SessionController extends ControllerBase
             }
 
             $username = $this->request->getPost('email', 'alphanum');
-            $user = Users::findFirst("username='$username' AND password='$password' AND active='Y'");
+            $user = User::findFirst("uname='$username' AND password='$password' AND status='1'");
             if ($user != false) {
                 $this->_registerSession($user);
                 $this->flash->success('Welcome ' . $user->name);

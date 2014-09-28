@@ -45,14 +45,49 @@ try {
 			$url->setBaseUri('/');
 			return $url;
 			});
-	$di->set('session', function(){
-			$session = new Phalcon\Session\Adapter\Files();
-			$session->start();
-			return $session;
-		});
+
+	/**
+	 * Setting up volt
+	 */
+	$di->set ( 'volt', function ($view, $di) {
+		
+		$volt = new \Phalcon\Mvc\View\Engine\Volt ( $view, $di );
+		
+		$volt->setOptions ( array (
+				"compiledPath" => "../cache/volt/" 
+		) );
+		
+		$compiler = $volt->getCompiler ();
+		$compiler->addFunction ( 'is_a', 'is_a' );
+		
+		return $volt;
+	}, true );
+	
+	
+	$di->set ( 'session', function () {
+		$session = new Phalcon\Session\Adapter\Files ();
+		$session->start ();
+		return $session;
+	} );
+	/**
+	 * Register the flash service with custom CSS classes
+	 */
+	$di->set ( 'flash', function () {
+		return new Phalcon\Flash\Session ( array (
+				'error' => 'alert alert-error',
+				'success' => 'alert alert-success',
+				'notice' => 'alert alert-info' 
+		) );
+	} );
+	
+	/**
+	 * Register a user component
+	 */
+	$di->set ( 'elements', function () {
+		return new Elements ();
+	} );
 	Logger::init("../log/fb.log", 1);
 	Logger::info('start');
-
 	//Handle the request
 	$application = new \Phalcon\Mvc\Application();
 	$application->setDI($di);

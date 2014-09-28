@@ -1,10 +1,11 @@
 <?php
 
-class UserController extends Phalcon\Mvc\Controller
+class UserController extends ControllerBase
 {
 
 	public function indexAction()
 	{
+		
 		$user = new User();
 		$users = $user->find();
 		$data = array ();

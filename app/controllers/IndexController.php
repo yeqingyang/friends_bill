@@ -1,10 +1,14 @@
 <?php
 
-class IndexController extends Phalcon\Mvc\Controller 
+class IndexController extends ControllerBase 
 {
+	public function initialize() {
+		$this->tag->setTitle ( 'Home' );
+		parent::initialize ();
+	}
 
-	public function indexAction()
-	{
+	public function IndexAction(){
+		
 	}
 
 }
