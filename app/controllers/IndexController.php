@@ -1,11 +1,14 @@
 <?php
 
-class IndexController extends Phalcon\Mvc\Controller 
+class IndexController extends ControllerBase 
 {
+	public function initialize() {
+		$this->tag->setTitle ( 'Home' );
+		parent::initialize ();
+	}
 
-	public function indexAction()
-	{
-			echo "<h1>Flowers and Losers!</h1>";
+	public function IndexAction(){
+		$this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_AFTER_TEMPLATE);
 	}
 
 }

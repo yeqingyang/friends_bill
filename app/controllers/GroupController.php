@@ -1,6 +1,7 @@
 <?php
-
-class GroupController extends Phalcon\Mvc\Controller
+use Phalcon\Mvc\View,
+		Phalcon\Mvc\Controller;
+class GroupController extends ControllerBase
 {
 
 	public function indexAction()
@@ -18,6 +19,11 @@ class GroupController extends Phalcon\Mvc\Controller
 			);
 		}
 		echo json_encode($data);
+	}
+	
+	public function findAction()
+	{
+		$this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
 	}
 
 	public function getGroupAction($name=NULL)

@@ -1,10 +1,11 @@
 <?php
 
-class UserController extends Phalcon\Mvc\Controller
+class UserController extends ControllerBase
 {
 
 	public function indexAction()
 	{
+		
 		$user = new User();
 		$users = $user->find();
 		$data = array ();
@@ -54,7 +55,7 @@ class UserController extends Phalcon\Mvc\Controller
 			echo "password not same!";
 			return;
 		}
-		$user->password = $this->request->get('password','string');
+		$user->password = md5($p1);
 		$ret = $user->save();
 		if(!$ret){
 			foreach ($user->getMessages() as $message) {
