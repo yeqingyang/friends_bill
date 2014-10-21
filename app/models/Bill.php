@@ -3,12 +3,12 @@ class Bill extends Phalcon\Mvc\Model
 {
 	public $bid;
 	public $gid;
+	public $bname;
 	public $uid;
 	public $cost;
 	public $create_time;
 	public $finish_time;
 	public $place;
-	public $comments;
 	public $status;
 
 	public function getSource(){
@@ -17,5 +17,6 @@ class Bill extends Phalcon\Mvc\Model
 
 	public function init(){
 	}
+	
 
 }
