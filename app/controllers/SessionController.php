@@ -33,7 +33,7 @@ class SessionController extends ControllerBase
             }
 
             $user = new User();
-            $user->username = $username;
+            $user->uname = $username;
             $user->password = md5($password);
             $user->name = $name;
             $user->email = $email;
