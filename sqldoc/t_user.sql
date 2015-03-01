@@ -13,5 +13,6 @@ CREATE TABLE IF NOT EXISTS `t_user`
 	`last_login_time` int unsigned not null default 0 comment '�ϴε�¼��ʱ��',
     `online_accum_time` int unsigned not null default 0 comment '�����ۼ�ʱ��',
     `password` varchar(50) not null default '' comment 'password',	
-	primary key(`uid`,`email`)
+	primary key(`uid`),
+	unique index(`uid`,`email`)
 ) auto_increment=1000 default charset utf8 engine = InnoDb;
